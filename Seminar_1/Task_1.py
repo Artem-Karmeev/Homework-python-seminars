@@ -4,6 +4,6 @@
 num = int(input('Введите число: '))
 
 if (num == 6 or num == 7):
-    print('Выходой ')
+    print('Выходной ')
 else:
     print('Будний ')
