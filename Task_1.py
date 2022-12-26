@@ -53,13 +53,22 @@ def convert_polynomial(my_dict):
                     new_str += '+ ' + str(value) + '*x' + ' '
             elif key == 0:
                 if value > 0:
-                    new_str += '+ ' + str(value) + ' =0'
+                    new_str += '+ ' + str(value) + ' = 0'
                 else:
-                    new_str += str(value) + ' =0'
+                    new_str += str(value) + ' = 0'
 
     if new_str[0] == '+':
         new_str = new_str[2: ]
     return new_str
+
+def convert_str_in_dict(polynomial_str: str):
+    new_list = polynomial_str.replace('*x ','*x**1 ').replace(' ', '').replace('+', '*x**').replace('-', '*x**-').replace('=', '*x**').split('*x**')
+    polynomial_dict = {}
+
+    for i in range(0, len(new_list)-1, 2):
+        polynomial_dict[int(new_list[i+1])] = int(new_list[i])  
+
+
 
 n = inp_n()
 polynomial_1 =  rand_polynomial(n)
