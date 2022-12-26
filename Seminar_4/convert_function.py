@@ -2,8 +2,8 @@ def convert_polynomial(my_dict):
     new_str = ''
 
     for key, value in my_dict.items():
-        if value != 0 and value != 1 and value != -1:
-            if key > 1 and key != 0:
+        if value != 0 and value != 1 and value != -1 and key != 0:
+            if key > 1:
                 if value < 0:
                     new_str += str(value) + '*x' + '**' + str(key) + ' '
                 else:
@@ -13,11 +13,11 @@ def convert_polynomial(my_dict):
                     new_str += str(value) + '*x' + ' '
                 else:
                     new_str += '+ ' + str(value) + '*x' + ' '
-            elif key == 0:
-                if value > 0:
-                    new_str += '+ ' + str(value) + ' = 0'
-                else:
-                    new_str += str(value) + ' = 0'
+        if key == 0:
+            if value > 0:
+                new_str += '+ ' + str(value) + ' = 0'
+            else:
+                new_str += str(value) + ' = 0'
 
     if new_str[0] == '+':
         new_str = new_str[2: ]
