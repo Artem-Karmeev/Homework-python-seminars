@@ -1,6 +1,6 @@
 import random
 
-def rand_polynomial(n):
+def rand_polynomial(n: int):
     my_dict = {}
     for i in range(n, -1, -1):
         if i == n:

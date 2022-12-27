@@ -1,4 +1,4 @@
-def convert_polynomial(my_dict):
+def convert_polynomial(my_dict: dict):
     new_str = ''
 
     for key, value in my_dict.items():
