@@ -21,6 +21,7 @@ def convert_polynomial(my_dict):
 
     if new_str[0] == '+':
         new_str = new_str[2: ]
+    new_str = new_str.replace('-', '- ')
     return new_str
 
 def convert_str_in_dict(polynomial_str: str):
