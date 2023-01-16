@@ -1,13 +1,14 @@
- 
+
 def convert_list_in_str(li: list) -> str:
     li = list(zip(li[0], li[1]))
     li = [str(li[i][0]) + li[i][1] for i in range(len(li))]
-    li =''.join(li)
+    li = ''.join(li)
     return li
+
 
 def packing(data: str) -> list:
     tmp_list = [[], []]
-    data+= ' '
+    data += ' '
     temp_i = 1
 
     tmp_list[1].append(data[0])
@@ -21,7 +22,8 @@ def packing(data: str) -> list:
             temp_i = 1
     return convert_list_in_str(tmp_list)
 
-def inpack(packed_str: str) ->  str:
+
+def inpack(packed_str: str) -> str:
     inpack_str = ''
     for i in range(0, len(packed_str)-1, 2):
         my_count = int(packed_str[i])
