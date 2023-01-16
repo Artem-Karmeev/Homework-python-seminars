@@ -23,8 +23,8 @@ def packing(data: str) -> list:
 
 def inpack(packed_str: str) ->  str:
     inpack_str = ''
-    for i in range(0, len(packed_str), 2):
-        my_count = int(packed_str[i + 1])
+    for i in range(0, len(packed_str)-1, 2):
+        my_count = int(packed_str[i])
         for _ in range(my_count):
-            inpack_str += packed_str[i]
+            inpack_str += packed_str[i+1]
     return inpack_str

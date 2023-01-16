@@ -1,5 +1,5 @@
-def record_file(res: str):
-    text = open("Seminar_5\Task_4\data\input_data.txt", 'w')
+def record_file(res: str, link: str):
+    text = open(link, 'w')
     text.writelines(res)
     text.close()
 
