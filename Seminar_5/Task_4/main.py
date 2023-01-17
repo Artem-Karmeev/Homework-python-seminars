@@ -9,11 +9,17 @@ original_data = read_file(link_inp)
 if original_data[0].isdigit():
     result = inpack(original_data)
     record_file(result, link_out)
+    res = read_file(link_inp)
+    print(result)
+    print(res)
 else:
     result = packing(original_data)
-    record_file(result, link_out)    
+    record_file(result, link_out) 
+    res = read_file(link_inp)  
+    print(result)
+    print(res)
 
-
+# добавить обработку 10W100W
 
 
 
