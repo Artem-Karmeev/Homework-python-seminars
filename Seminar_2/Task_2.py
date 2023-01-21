@@ -6,15 +6,18 @@
 
 n = int(input('Введи N: '))
 
-res = []
-my_sum = 0
+# res = []
+# my_sum = 0
 
-for i in range(1, n+1):
-    res.append(round((1 + 1/i)**i, 2))
+# for i in range(1, n+1):
+#     res.append(round((1 + 1/i)**i, 2))
 
-res[0] = int(res[0])
+# res[0] = int(res[0])
 
-for i in range(n):
-    my_sum += res[i]
+# for i in range(n):
+#     my_sum += res[i]
+# print(f'Для n={n} -> {res} \nСумма {my_sum}')
 
-print(f'Для n={n} -> {res} \nСумма {my_sum}')
+
+res = [round((1 + 1/i)**i, 2) for i in range(1, n + 1)]
+print(f'Для n={n} -> {res} \nСумма {sum(res)}')

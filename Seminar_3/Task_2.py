@@ -13,6 +13,8 @@ for i in range(len(my_list)//2):
     res_list.append(my_list[i] * my_list[my_count])
     my_count -= 1
 
+
+
 if len(my_list) % 2 != 0:
     res_list.append(my_list[(len(my_list)//2)] * my_list[(len(my_list)//2)])
 

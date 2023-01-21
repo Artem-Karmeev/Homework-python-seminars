@@ -8,7 +8,11 @@
 num = input('Введите число: ')
 res = 0
 
-for char in num:
-    if char.isdigit():
-        res += int(char)
+for item in num:
+    if item.isdigit():
+        res += int(item)
 print(res)
+
+
+
+

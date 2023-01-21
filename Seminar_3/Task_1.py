@@ -13,9 +13,11 @@
 # print(my_sum)
 
 my_list = [2, 3, 5, 9, 3]
-my_sum = 0
+# my_sum = 0
 
-for i in range(1, len(my_list), 2):
-    my_sum += my_list[i]
+# for i in range(1, len(my_list), 2):
+#     my_sum += my_list[i]
 
-print(my_sum)
+my_list = [my_list[i] for i in range(1, len(my_list), 2)]
+
+print(sum(my_list))

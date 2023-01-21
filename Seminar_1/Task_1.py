@@ -3,7 +3,12 @@
 
 num = int(input('Введите число: '))
 
-if (num == 6 or num == 7):
-    print('Выходной ')
-else:
-    print('Будний ')
+# if (num == 6 or num == 7):
+#     print('Выходной ')
+# else:
+#     print('Будний ')
+
+# _________
+
+day = lambda x: 'Выходной' if x > 5 else 'Будний'
+print(day(num))
