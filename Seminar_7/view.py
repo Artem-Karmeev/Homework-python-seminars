@@ -27,6 +27,33 @@ def inpyt_search() -> str:
     return meaning
 
 
+def del_item(meaning: list) -> int:
+    while True:
+        try:
+            x = int(input('Введите "ID" контакта: '))
+            for i in range(0, len(meaning), 2):
+                if x == int(meaning[i]):
+                    return x
+            else:
+                print('Укажите доступный ID: \n')
+        except:
+            print('Только число!\n')
+
+def making_changes() -> bool:
+    while True:
+        user_res = input('У вас есть не сохраненный результат, сохранить? (Y/n)').lower().strip()
+        if user_res == 'y' or user_res == 'n':
+            if user_res == 'y':
+                user_res = True
+                return user_res
+            else:
+                user_res = False
+                return user_res
+        else:
+            print('Введите только "Y" или "N"!')
+
+
+
 class PrintOut:
 
     def __init__(self) -> None:
@@ -36,15 +63,22 @@ class PrintOut:
         for i in range(len(contack_list)):
             print(*contack_list[i])
 
+    def show_i_contacts(self, contack_list: list): 
+        for i in range(1, len(contack_list), 2):
+            print(f'ID : {contack_list[i-1]}', end='; ')
+            print(*contack_list[i])
+            print()
+
     def open_print(self):
         print('Файл успешно открыт!\n')
 
     def save_print(self):
         print('Файл успешно сохранен!\n')
 
-    
 
-dp_po = PrintOut()
+
+
+po = PrintOut()
 
     
 
