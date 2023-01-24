@@ -8,7 +8,5 @@ num = int(input('Введите число: '))
 # else:
 #     print('Будний ')
 
-# _________
-
 day = lambda x: 'Выходной' if x > 5 else 'Будний'
 print(day(num))

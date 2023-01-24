@@ -6,12 +6,14 @@
 # 0,56 -> 11
 
 num = input('Введите число: ')
-res = 0
 
-for item in num:
-    if item.isdigit():
-        res += int(item)
-print(res)
+# for item in num:
+#     if item.isdigit():
+#         res += int(item)
+# print(res)
+
+res = [int(i) for i in num if i.isdigit()]
+print(sum(res))
 
 
 

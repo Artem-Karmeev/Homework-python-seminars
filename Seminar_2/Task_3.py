@@ -17,7 +17,7 @@ print(f'До:    {original_list}')
 
 # original_list = temp_list
 
-random.shuffle(original_list)
+random.shuffle(original_list) # не удержался)
 print(f'После: {original_list}')
 
 
