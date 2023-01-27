@@ -58,9 +58,10 @@ class data:
     def inp_rating(self) -> str:
         while True:
             score = input('Какая оценка?: ')
-            if len(score) == 1 and 0 < int(score) < 6:
+
+            if len(score) == 1 and score.isdigit() and 0 < int(score) < 6:
                 return score
-            elif len(score) == 2 and 0 < int(score[0]) < 6:
+            elif len(score) == 2 and score[0].isdigit() and 0 < int(score[0]) < 6:
                 if score[1] == '-' or score[1] == '+':
                     return score
                 else:
