@@ -23,6 +23,7 @@ def journal():
             break # будем сохранять в файл 
         score = d.inp_rating() # запросили оценку
         dp.update_score(surname, score) # поставили оценку
+        
 
 
 

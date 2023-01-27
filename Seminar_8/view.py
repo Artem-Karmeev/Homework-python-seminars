@@ -5,33 +5,43 @@ class data:
 
 
     def imp_num(self) -> str:        
-        '''запрашиваем номер класса в формате: цифра -> буква'''
-        open_names = ['a','b','c'] # хорошо было бы эту инфу из файла подтянуть
+
+        with open(r'Seminar_8\school_classes\list_of_classes.txt', 'r', encoding='UTF-8') as file:
+            open_names = file.read().split(',') # Возможно, стоит это вынести в отдельную функцию 
 
         while True:
             num = input('Какой класс?').lower()
-            if len(num) == 2: # нужно сделать для 10 и 11 классов
-                if num[0].isdigit():
-                    if num[1] in open_names:
-                        return num
-                    else:
-                        print('ERROR')
+            if num in open_names:
+                return num
+            else:
+                print('ERROR')
+
+
+    def inp_subject(self, my_dict: dict) -> dict:
+        while True:
+
+            subject = input('Какой предмет?: ').lower()
+            
+            if len(subject) == 1:
+                for key in my_dict:
+                    if key[0] == subject:
+                        subject = key
+                        print(f'{subject}: ')
+                        return subject
                 else:
                     print('ERROR')
-            else:
-                print('ERROR')
+
+            elif len(subject) > 1:
+                for key in my_dict:
+                    if subject in key:
+                        subject = key
+                        print(f'{subject}: ')
+                        return subject
+                else:
+                    print('ERROR')
 
 
-    def inp_subject(sels, my_dict: dict) -> dict: # нужно сделать более 'юсер френдли'
-        while True:
-            subject = input('Какой предмет?').lower()
-            if subject in my_dict:
-                return subject
-            else:
-                print('ERROR')
-
-
-    def imp_surname(sels, clacc_dict: dict) -> str:
+    def imp_surname(self, clacc_dict: dict) -> str:
         while True:
             temp_surname = input('Кто пойдет отвечать?: ').strip()
             surname = temp_surname[0].upper()
@@ -45,7 +55,7 @@ class data:
                 print('ERROR')
 
 
-    def inp_rating(sels) -> str:
+    def inp_rating(self) -> str:
         while True:
             score = input('Какая оценка?: ')
             if len(score) == 1 and 0 < int(score) < 6:
@@ -59,7 +69,7 @@ class data:
                 print('ERROR')
 
 
-    def print_class(sels, my_di: dict):
+    def print_class(self, my_di: dict):
         for k, v in my_di.items():
             print(f'{k}: {v}')
 

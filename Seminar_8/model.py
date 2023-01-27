@@ -40,33 +40,33 @@ class my_class:
             self.my_dict[temp_list[i][0]] = temp_dict
         
 
-    def init_subject(sels, key: str) -> dict:
-        sels.key = key           
-        sels.subject_dict = sels.my_dict[key]
+    def init_subject(self, key: str) -> dict:
+        self.key = key           
+        self.subject_dict = self.my_dict[key]
 
 
-    def get_subject(sels):
-        return sels.subject_dict
+    def get_subject(self):
+        return self.subject_dict
 
 
-    def update_score(sels, surname_key: str, score: str):
-        sels.subject_dict[surname_key] += f', {score}'
+    def update_score(self, surname_key: str, score: str):
+        self.subject_dict[surname_key] += f', {score}'
         
 
-    def update_data(sels):
-        sels.my_dict[sels.key] = sels.subject_dict
+    def update_data(self):
+        self.my_dict[self.key] = self.subject_dict
 
 
-    def save_data(sels):
+    def save_data(self):
         temp_str = ''
 
-        for key in sels.my_dict:
+        for key in self.my_dict:
             temp_str += f'{key}: '
-            for k, v in sels.my_dict[key].items():
+            for k, v in self.my_dict[key].items():
                 temp_str += f'{k} = {v}; '
             temp_str = temp_str[: -2] + '\n' 
 
-        with open(sels.path, 'w', encoding='UTF-8') as file:
+        with open(self.path, 'w', encoding='UTF-8') as file:
             data = file.write(temp_str)
 
 
